@@ -18,7 +18,10 @@ public class Docente extends Personal {
 		this.asignaturas = asignaturas;
 	}
 
-
+	//METODOS
+	
+	
+	//GETTERS Y SETTERS
 	public String getRol() {
 		return rol;
 	}
