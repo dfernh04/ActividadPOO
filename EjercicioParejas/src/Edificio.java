@@ -14,9 +14,25 @@ public class Edificio {
 	public Edificio(String nombre, String area, Vector<Clase> clases) {
 		this.nombre = nombre;
 		this.area = area;
-		this.clases = clases;
+		this.clases = crearclase();
 	}
-	
+	public Vector<Clase> crearclase() {
+		int i=0;
+		for(i=0;i<31;i++) {
+			this.clases.get(i).setNumero(i);
+			this.clases.get(i).setReservar(false);
+			if(i<=10) {
+				this.clases.get(i).setPiso(1);
+			}
+			else if(i<=20) {
+				this.clases.get(i).setPiso(2);
+			}
+			else if(i<=30) {
+				this.clases.get(i).setPiso(3);
+			}
+		}
+		return clases;
+	}
 	public boolean reservarClase(Clase clase) {
 		boolean reservada = false;
 		boolean encontrado = false;
