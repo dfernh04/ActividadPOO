@@ -19,18 +19,48 @@ public class Edificio {
 	
 	public boolean reservarClase(Clase clase) {
 		boolean reservada = false;
+		boolean encontrado = false;
+		int i = 0;
 		
-		for (int i = 0; i < clases.size(); i++) {
+		while(!encontrado && i < clases.size()) {
 			if(clase.equals(clases.get(i))) {
-				clases.get(i).setReservar(true);
-				reservada = true;
+				if(!clases.get(i).isReservar()) {
+					clases.get(i).setReservar(true);
+					reservada = true;
+					encontrado = true;
+				} else {
+					System.out.println("La clase ya esta reservada");
+					encontrado = true;
+				}
 			}
+			i++;
 		}
 		
-		if(!reservada)
+		if(!encontrado)
 			System.out.println("Esa clase no existe");
 		
+		/*for (int i = 0; i < clases.size(); i++) {
+			if(clase.equals(clases.get(i))) {
+				if(!clases.get(i).isReservar()) {
+					clases.get(i).setReservar(true);
+					reservada = true;					
+				} else {
+					System.out.println("La clase ya esta reservada");
+					reservada = false;
+				}
+			}
+		}*/
+
 		return reservada;
+	}
+	
+	public void listarClasesReservadas() {
+		System.out.println("\nCLASES RESERVADAS:");
+		for (int i = 0; i < clases.size(); i++) 
+			if(clases.get(i).isReservar())
+				System.out.println("\t-" + clases.get(i).getNumero());
+		
+		System.out.println();
 	}
 	
 	
