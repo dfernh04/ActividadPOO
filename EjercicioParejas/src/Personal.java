@@ -21,7 +21,6 @@ public class Personal {
 		this.edad = edad;
 		this.salario = salario;
 	}
-
 	public String getNombre() {
 		return nombre;
 	}
