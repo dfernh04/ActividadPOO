@@ -61,8 +61,14 @@ public class Personal {
 	public void setSalario(double salario) {
 		this.salario = salario;
 	}
-	
-	
+
+	public int getEdad() {
+		return edad;
+	}
+
+	public void setEdad(int edad) {
+		this.edad = edad;
+	}
 	
 	
 	
