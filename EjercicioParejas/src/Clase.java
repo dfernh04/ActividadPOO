@@ -1,5 +1,5 @@
 
-public class clase {
+public class Clase {
 	private double piso;
 	private int numero;
 	private boolean proyector;
@@ -44,7 +44,7 @@ public class clase {
 		this.temperatura = temperatura;
 	}
 	//CONSTRUCTOR
-	public clase(double piso, int numero, boolean proyector, boolean ordenadores, double temperatura) {
+	public Clase(double piso, int numero, boolean proyector, boolean ordenadores, double temperatura) {
 		super();
 		this.piso = piso;
 		this.numero = numero;
