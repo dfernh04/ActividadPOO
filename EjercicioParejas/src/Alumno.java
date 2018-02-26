@@ -1,11 +1,11 @@
 import java.util.Vector;
 
 public class Alumno {
-	String nombre;
-	String apellido;
-	String dni;
-	Vector<Asignatura> asignaturas = new Vector<>(); 
-	int mensualidad;
+	private String nombre;
+	private String apellido;
+	private String dni;
+	private Vector<Asignatura> asignaturas = new Vector<>(); 
+	private int mensualidad;
 	//GETTERS Y SETTERS
 	public String getNombre() {
 		return nombre;
