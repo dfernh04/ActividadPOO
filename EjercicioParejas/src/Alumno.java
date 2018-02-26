@@ -1,13 +1,13 @@
 import java.util.Vector;
 
 public class Alumno {
-	
+
 	private String nombre;
 	private String apellido;
 	private String dni;
 	private Vector<Asignatura> asignaturas = new Vector<>(); 
 	private int factura;
-	
+
 	//CONSTRUCTOR
 	public Alumno(String nombre, String apellido, String dni, Vector<Asignatura> asignaturas, int factura) {
 		super();
@@ -17,7 +17,7 @@ public class Alumno {
 		this.asignaturas = asignaturas;
 		this.factura = factura;
 	}
-	
+
 
 	//METODOS
 	public void aniadirAsignatura(Asignatura s) {
@@ -26,7 +26,14 @@ public class Alumno {
 	public void eliminarAsignatura(Asignatura s) {
 		asignaturas.remove(s);
 	}
-	
+	public float calcularMedia() {
+		int i=0;
+		float result=0;
+		for(i=0;i<asignaturas.size();i++) {
+			result+=asignaturas.get(i).getNota();
+		}
+		return result;
+	}
 	//GETTERS Y SETTERS
 	public String getNombre() {
 		return nombre;
@@ -58,5 +65,5 @@ public class Alumno {
 	public void setFactura(int mensualidad) {
 		this.factura = mensualidad;
 	}
-	
+
 }
