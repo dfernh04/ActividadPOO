@@ -53,6 +53,6 @@ public class Alumno {
 	public void eliminarAsignatura(Asignatura s) {
 		asignaturas.remove(s);
 	}
-	
-	
+
+
 }

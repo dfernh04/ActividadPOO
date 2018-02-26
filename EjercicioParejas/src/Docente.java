@@ -4,7 +4,7 @@ public class Docente extends Personal {
 
 	private String rol;
 	private Vector<Asignatura> asignaturas;
-	
+
 	/**
 	 * @param nombre
 	 * @param apellidos
@@ -17,7 +17,7 @@ public class Docente extends Personal {
 		this.rol = rol;
 		this.asignaturas = asignaturas;
 	}
-	
+
 
 	public String getRol() {
 		return rol;
@@ -34,5 +34,5 @@ public class Docente extends Personal {
 	public void setAsignaturas(Vector<Asignatura> asignaturas) {
 		this.asignaturas = asignaturas;
 	}
-	
+
 }

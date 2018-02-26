@@ -6,7 +6,7 @@ public class Personal {
 	private int id;
 	private int edad;
 	private double salario;
-	
+
 	/**
 	 * @param nombre
 	 * @param apellidos
@@ -69,7 +69,7 @@ public class Personal {
 	public void setEdad(int edad) {
 		this.edad = edad;
 	}
-	
-	
-	
+
+
+
 }

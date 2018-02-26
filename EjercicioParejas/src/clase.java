@@ -6,7 +6,7 @@ public class clase {
 	private boolean ordenadores;
 	private double temperatura;
 	private boolean reservar;
-//GETTERS Y SETTERS
+	//GETTERS Y SETTERS
 	public double getPiso() {
 		return piso;
 	}
@@ -43,7 +43,7 @@ public class clase {
 	public void setTemperatura(double temperatura) {
 		this.temperatura = temperatura;
 	}
-//CONSTRUCTOR
+	//CONSTRUCTOR
 	public clase(double piso, int numero, boolean proyector, boolean ordenadores, double temperatura) {
 		super();
 		this.piso = piso;
@@ -52,6 +52,6 @@ public class clase {
 		this.ordenadores = ordenadores;
 		this.temperatura = temperatura;
 	}
-//METODOS
-	
+	//METODOS
+
 }

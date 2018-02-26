@@ -1,8 +1,8 @@
 
 public class NoDocente extends Personal {
-	
+
 	private String area;
-	
+
 	/**
 	 * @param nombre
 	 * @param apellidos
@@ -23,12 +23,12 @@ public class NoDocente extends Personal {
 	public void setArea(String area) {
 		this.area = area;
 	}
-	
 
-	
-	
-	
-	
-	
+
+
+
+
+
+
 
 }

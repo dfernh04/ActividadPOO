@@ -1,14 +1,14 @@
 import java.util.Vector;
 
 public class Universidad {
-	
+
 	private String nombreUniversidad;
-	
+
 	private Vector <Edificio> edificios;
 	private Vector <Personal> personal;
 	private Vector <Alumno> alumnos;
-	
-	
+
+
 	/**
 	 * @param nombreUniversidad
 	 * @param edificios
@@ -63,6 +63,6 @@ public class Universidad {
 	public void setAlumnos(Vector<Alumno> alumnos) {
 		this.alumnos = alumnos;
 	}
-	
+
 
 }
