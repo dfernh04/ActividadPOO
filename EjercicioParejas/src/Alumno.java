@@ -1,11 +1,32 @@
 import java.util.Vector;
 
 public class Alumno {
+	
 	private String nombre;
 	private String apellido;
 	private String dni;
 	private Vector<Asignatura> asignaturas = new Vector<>(); 
-	private int mensualidad;
+	private int factura;
+	
+	//CONSTRUCTOR
+	public Alumno(String nombre, String apellido, String dni, Vector<Asignatura> asignaturas, int factura) {
+		super();
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.dni = dni;
+		this.asignaturas = asignaturas;
+		this.factura = factura;
+	}
+	
+
+	//METODOS
+	public void aniadirAsignatura(Asignatura s) {
+		asignaturas.add(s);
+	}
+	public void eliminarAsignatura(Asignatura s) {
+		asignaturas.remove(s);
+	}
+	
 	//GETTERS Y SETTERS
 	public String getNombre() {
 		return nombre;
@@ -31,28 +52,11 @@ public class Alumno {
 	public void setAsignaturas(Vector<Asignatura> asignaturas) {
 		this.asignaturas = asignaturas;
 	}
-	public int getMensualidad() {
-		return mensualidad;
+	public int getFactura() {
+		return factura;
 	}
-	public void setMensualidad(int mensualidad) {
-		this.mensualidad = mensualidad;
+	public void setFactura(int mensualidad) {
+		this.factura = mensualidad;
 	}
-	//CONSTRUCTOR
-	public Alumno(String nombre, String apellido, String dni, Vector<Asignatura> asignaturas, int mensualidad) {
-		super();
-		this.nombre = nombre;
-		this.apellido = apellido;
-		this.dni = dni;
-		this.asignaturas = asignaturas;
-		this.mensualidad = mensualidad;
-	}
-	//METODOS
-	public void aniadirAsignatura(Asignatura s) {
-		asignaturas.add(s);
-	}
-	public void eliminarAsignatura(Asignatura s) {
-		asignaturas.remove(s);
-	}
-
-
+	
 }
