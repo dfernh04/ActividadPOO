@@ -23,7 +23,57 @@ public class Universidad {
 		this.personal = personal;
 		this.alumnos = alumnos;
 	}
-
+	
+	public boolean añadirEdificio(Edificio edificio) {
+		boolean añadido = false;
+		if(edificio != null) {
+			edificios.add(edificio);
+			añadido = true;
+		}
+		return añadido;
+	}
+	
+	/*public boolean eliminarEdificio(Edificio edificio) {
+		
+		
+	}*/
+	
+	public boolean añadirPersonalDocente(Docente docente) {
+		boolean añadido = false;
+		if(docente != null) {
+			personal.add(docente);
+			añadido = true;
+		}
+		return añadido;
+	}
+	
+	public boolean añadirPersonalNoDocente(NoDocente noDocente) {
+		boolean añadido = false;
+		if(noDocente != null) {
+			personal.add(noDocente);
+			añadido = true;
+		}
+		return añadido;
+	}
+	
+	public void listarPersonal() {
+		System.out.println("\nLISTADO DE PERSONAL:");
+		for (int i = 0; i < personal.size(); i++) {
+			System.out.println("\t- " + personal.get(i).getNombre() + " " + personal.get(i).getApellidos());
+		}
+	}
+	
+	public void listarPersonalDocente() {
+		
+	}
+	
+	public void listarPersonalNoDocente() {
+		
+	}
+	
+	
+	
+	//--------------GETTERS Y SETTERS--------------
 
 	public String getNombreUniversidad() {
 		return nombreUniversidad;
