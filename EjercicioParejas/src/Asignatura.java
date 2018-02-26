@@ -1,5 +1,3 @@
-package EjercicioParejas;
-
 public class Asignatura {
 String nombre;
 double creditos;

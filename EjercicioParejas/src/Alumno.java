@@ -1,5 +1,3 @@
-package EjercicioParejas;
-
 import java.util.Vector;
 
 public class Alumno {
