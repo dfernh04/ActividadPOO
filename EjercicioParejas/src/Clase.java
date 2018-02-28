@@ -1,6 +1,6 @@
 
 public class Clase {
-	private double piso;
+	private int piso;
 	private int numero;
 	private boolean proyector;
 	private boolean ordenadores;
@@ -8,20 +8,21 @@ public class Clase {
 	private boolean reservar;
 	
 	//CONSTRUCTOR
-	public Clase(double piso, int numero, boolean proyector, boolean ordenadores, double temperatura) {
+	public Clase(int numero, int piso, boolean proyector, boolean ordenadores, double temperatura, boolean reservar) {
 		super();
-		this.piso = piso;
 		this.numero = numero;
+		this.piso = piso;
 		this.proyector = proyector;
 		this.ordenadores = ordenadores;
 		this.temperatura = temperatura;
+		this.reservar = reservar;
 	}
 	
-	//METODOS
+	//FUNCIONES
 	
 	
 	//GETTERS Y SETTERS
-	public double getPiso() {
+	public int getPiso() {
 		return piso;
 	}
 	public boolean isReservar() {
@@ -30,7 +31,7 @@ public class Clase {
 	public void setReservar(boolean reservar) {
 		this.reservar = reservar;
 	}
-	public void setPiso(double piso) {
+	public void setPiso(int piso) {
 		this.piso = piso;
 	}
 	public int getNumero() {

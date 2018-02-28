@@ -38,19 +38,10 @@ public class Universidad {
 		
 	}*/
 	
-	public boolean añadirPersonalDocente(Docente docente) {
+	public boolean añadirPersonal(Personal empleado) {
 		boolean añadido = false;
-		if(docente != null) {
-			personal.add(docente);
-			añadido = true;
-		}
-		return añadido;
-	}
-	
-	public boolean añadirPersonalNoDocente(NoDocente noDocente) {
-		boolean añadido = false;
-		if(noDocente != null) {
-			personal.add(noDocente);
+		if(empleado != null) {
+			this.personal.add(empleado);
 			añadido = true;
 		}
 		return añadido;
@@ -58,18 +49,64 @@ public class Universidad {
 	
 	public void listarPersonal() {
 		System.out.println("\nLISTADO DE PERSONAL:");
-		for (int i = 0; i < personal.size(); i++) {
-			System.out.println("\t- " + personal.get(i).getNombre() + " " + personal.get(i).getApellidos());
+		for (int i = 0; i < this.personal.size(); i++) {
+			System.out.println("\t- " + this.personal.get(i).getNombre() + " " + this.personal.get(i).getApellidos());
 		}
 	}
 	
 	public void listarPersonalDocente() {
-		
+		System.out.println("\nLISTADO DE DOCENTE:");
+		for (int i = 0; i < this.personal.size(); i++) {
+			if (this.personal.get(i) instanceof Docente) {
+				Docente docente = (Docente)this.personal.get(i);
+				System.out.println("\t- " + docente.getNombre() + " " + docente.getApellidos() + ", con rol " + docente.getRol());
+			}
+		}
 	}
 	
 	public void listarPersonalNoDocente() {
-		
+		System.out.println("\nLISTADO DE PERSONA NO DOCENTE:");
+		for (int i = 0; i < this.personal.size(); i++) {
+			if (this.personal.get(i) instanceof NoDocente) {
+				NoDocente noDocente = (NoDocente)this.personal.get(i);
+				System.out.println("\t- " + noDocente.getNombre() + " " + noDocente.getApellidos() + ", trabajando en el area " + noDocente.getArea());
+			}
+		}
 	}
+	
+	public double salarioTotalPersonal() {
+		System.out.println("\nSALRIO TOTAL PERSONAL:");
+		double salario = 0;
+		for (int i = 0; i < this.personal.size(); i++) 
+			salario += this.personal.get(i).getSalario();
+		return salario;
+	}
+	
+	public double salarioTotalDocente() {
+		System.out.println("\nSALRIO TOTAL PERSONAL DOCENTE:");
+		double salario = 0;
+		for (int i = 0; i < this.personal.size(); i++) 
+			if(this.personal.get(i) instanceof Docente)
+				salario += this.personal.get(i).getSalario();
+		return salario;
+	}
+	
+	public double salarioTotalNoDocente() {
+		System.out.println("\nSALRIO TOTAL PERSONAL DOCENTE:");
+		double salario = 0;
+		for (int i = 0; i < this.personal.size(); i++) 
+			if(this.personal.get(i) instanceof NoDocente)
+				salario += this.personal.get(i).getSalario();
+		return salario;
+	}
+	
+	public void listarAlumnos() {
+		System.out.println("\nLISTADO DE ALUMNOS:");
+		for (int i = 0; i < this.alumnos.size(); i++) {
+			System.out.println("\t- " + this.alumnos.get(i).getNombre() + " " + this.alumnos.get(i).getApellido());
+		}
+	}
+	
 	
 	
 	

@@ -6,33 +6,38 @@ public class Alumno {
 	private String apellido;
 	private String dni;
 	private Vector<Asignatura> asignaturas = new Vector<>(); 
-	private int factura;
+	private double factura;
 
 	//CONSTRUCTOR
-	public Alumno(String nombre, String apellido, String dni, Vector<Asignatura> asignaturas, int factura) {
+	public Alumno(String nombre, String apellido, String dni, double factura, Vector<Asignatura> asignaturas) {
 		super();
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.dni = dni;
-		this.asignaturas = asignaturas;
 		this.factura = factura;
+		this.asignaturas = asignaturas;
 	}
 
 
 	//METODOS
 	public void aniadirAsignatura(Asignatura s) {
-		asignaturas.add(s);
+		this.asignaturas.add(s);
 	}
+	
 	public void eliminarAsignatura(Asignatura s) {
-		asignaturas.remove(s);
+		this.asignaturas.remove(s);
 	}
+	
 	public float calcularMedia() {
-		int i=0;
-		float result=0;
-		for(i=0;i<asignaturas.size();i++) {
-			result+=asignaturas.get(i).getNota();
+		float media = 0;
+		if(this.asignaturas.size() > 0) {
+			for(int i = 0; i < this.asignaturas.size(); i++) {
+				media += this.asignaturas.get(i).getNota();
+			}
+			media = media/this.asignaturas.size();
 		}
-		return result;
+		
+		return media;
 	}
 	//GETTERS Y SETTERS
 	public String getNombre() {
@@ -59,11 +64,11 @@ public class Alumno {
 	public void setAsignaturas(Vector<Asignatura> asignaturas) {
 		this.asignaturas = asignaturas;
 	}
-	public int getFactura() {
+	public double getFactura() {
 		return factura;
 	}
-	public void setFactura(int mensualidad) {
-		this.factura = mensualidad;
+	public void setFactura(double factura) {
+		this.factura = factura;
 	}
 
 }
