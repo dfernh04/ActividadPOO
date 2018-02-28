@@ -50,7 +50,6 @@ public class Launcher {
 		}
 		
 		uem.listarAlumnos();
-		System.out.println(uem.calcularIngresoTotalAlumnos());
 		
 		for (int i = 0; i < 10; i++) {
 			Alumno postGrado = new AlumnoPostGrado(20000, 30, asignaturasPostGrado, (AlumnoPreGrado) alumnos.get(i));
@@ -59,7 +58,6 @@ public class Launcher {
 
 		
 		uem.listarAlumnos();
-		System.out.println(uem.calcularIngresoTotalAlumnos());
 		uem.listarAlumnosPostGrado();
 		uem.listarAlumnosPreGrado();
 		
