@@ -17,7 +17,7 @@ public class Alumno {
 		this.id = id;
 		this.factura = factura;
 		this.edad = edad;
-		this.setRol(rol);
+		this.rol = rol;
 		this.asignaturas = asignaturas;
 	}
 
@@ -25,6 +25,18 @@ public class Alumno {
 	//METODOS
 	public void aniadirAsignatura(Asignatura s) {
 		this.asignaturas.add(s);
+	}
+	
+	public void aniadirNotaAsignatura(double nota, Asignatura asignatura) {
+		boolean encontrado = false;
+		int i = 0;
+		while(!encontrado && i < this.asignaturas.size()) {
+			if(asignatura.equals(this.getAsignaturas().get(i))) {
+				this.asignaturas.get(i).setNota(nota);
+				encontrado = true;
+			}
+			i++;
+		}
 	}
 	
 	public void eliminarAsignatura(Asignatura s) {

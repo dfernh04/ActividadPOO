@@ -1,5 +1,5 @@
 
-public class NoDocente extends Personal {
+public class PersonalNoDocente extends Personal {
 
 	private String area;
 
@@ -10,7 +10,7 @@ public class NoDocente extends Personal {
 	 * @param id
 	 * @param salario
 	 */
-	public NoDocente(String nombre, String apellidos, String dni, int id, int edad, double salario
+	public PersonalNoDocente(String nombre, String apellidos, String dni, int id, int edad, double salario
 			, String area) {
 		super(nombre, apellidos, dni, id, edad, salario);
 		this.area = area;
