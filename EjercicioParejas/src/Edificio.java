@@ -30,13 +30,14 @@ public class Edificio {
 	public Vector<Clase> crearclases() {
 		Vector<Clase> clases = new Vector<Clase>();
 		for(int i = 0; i < 30; i++) {
-			Clase clase = new Clase((i+1), 0, false, false, 0, false);
+			Clase clase = new Clase(i, 0, false, false, 0, false);
 			if(i < 10) 
-				clase.setPiso(1);
+				clase.setPiso(0);
 			else if(i < 20) 
-				clase.setPiso(2);
+				clase.setPiso(1);
 			else if(i < 30) 
-				clase.setPiso(3);
+				clase.setPiso(2);
+			
 			clases.add(clase);
 		}
 		return clases;
