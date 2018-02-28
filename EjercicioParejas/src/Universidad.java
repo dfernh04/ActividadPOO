@@ -6,7 +6,7 @@ public class Universidad {
 
 	private Vector <Edificio> edificios;
 	private Vector <Personal> personal;
-	private Vector <Alumno> alumnos;
+	private static Vector <Alumno> alumnosU;
 
 
 	/**
@@ -16,14 +16,14 @@ public class Universidad {
 	 * @param alumnos
 	 */
 	public Universidad(String nombreUniversidad, Vector<Edificio> edificios, Vector<Personal> personal,
-			Vector<Alumno> alumnos) {
+			Vector<Alumno> alumnosV) {
 		super();
 		this.nombreUniversidad = nombreUniversidad;
 		this.edificios = edificios;
 		this.personal = personal;
-		this.alumnos = alumnos;
+		alumnosU = alumnosV;
 	}
-	
+
 	public boolean añadirEdificio(Edificio edificio) {
 		boolean añadido = false;
 		if(edificio != null) {
@@ -32,12 +32,12 @@ public class Universidad {
 		}
 		return añadido;
 	}
-	
+
 	/*public boolean eliminarEdificio(Edificio edificio) {
-		
-		
+
+
 	}*/
-	
+
 	public boolean añadirPersonal(Personal empleado) {
 		boolean añadido = false;
 		if(empleado != null) {
@@ -46,70 +46,103 @@ public class Universidad {
 		}
 		return añadido;
 	}
-	
+
 	public void listarPersonal() {
 		System.out.println("\nLISTADO DE PERSONAL:");
-		for (int i = 0; i < this.personal.size(); i++) {
-			System.out.println("\t- " + this.personal.get(i).getNombre() + " " + this.personal.get(i).getApellidos());
-		}
+		if(!this.personal.isEmpty())
+			for (int i = 0; i < this.personal.size(); i++) 
+				System.out.println("\t- " + this.personal.get(i).getNombre() + " " + this.personal.get(i).getApellidos());
+		else
+			System.out.println("\tERROR: No hay personal asociado a esta universidad.");
+
+			
 	}
-	
+
 	public void listarPersonalDocente() {
 		System.out.println("\nLISTADO DE DOCENTE:");
-		for (int i = 0; i < this.personal.size(); i++) {
-			if (this.personal.get(i) instanceof Docente) {
-				Docente docente = (Docente)this.personal.get(i);
-				System.out.println("\t- " + docente.getNombre() + " " + docente.getApellidos() + ", con rol " + docente.getRol());
-			}
-		}
+		if(!this.personal.isEmpty()) {
+			for (int i = 0; i < this.personal.size(); i++) 
+				if (this.personal.get(i) instanceof Docente) {
+					Docente docente = (Docente)this.personal.get(i);
+					System.out.println("\t- " + docente.getNombre() + " " + docente.getApellidos() + ", con rol " + docente.getRol());
+				}
+		} else
+			System.out.println("\tERROR: No hay personal docente asociado a esta universidad.");
 	}
-	
+
 	public void listarPersonalNoDocente() {
 		System.out.println("\nLISTADO DE PERSONA NO DOCENTE:");
-		for (int i = 0; i < this.personal.size(); i++) {
-			if (this.personal.get(i) instanceof NoDocente) {
-				NoDocente noDocente = (NoDocente)this.personal.get(i);
-				System.out.println("\t- " + noDocente.getNombre() + " " + noDocente.getApellidos() + ", trabajando en el area " + noDocente.getArea());
-			}
-		}
+		if(!this.personal.isEmpty()) {
+			for (int i = 0; i < this.personal.size(); i++) 
+				if (this.personal.get(i) instanceof NoDocente) {
+					NoDocente noDocente = (NoDocente)this.personal.get(i);
+					System.out.println("\t- " + noDocente.getNombre() + " " + noDocente.getApellidos() + ", trabajando en el area " + noDocente.getArea());
+				}
+		} else
+			System.out.println("\tERROR: No hay personal no docente asociado a esta universidad.");
 	}
-	
+
 	public double salarioTotalPersonal() {
 		System.out.println("\nSALRIO TOTAL PERSONAL:");
 		double salario = 0;
-		for (int i = 0; i < this.personal.size(); i++) 
-			salario += this.personal.get(i).getSalario();
-		return salario;
-	}
-	
-	public double salarioTotalDocente() {
-		System.out.println("\nSALRIO TOTAL PERSONAL DOCENTE:");
-		double salario = 0;
-		for (int i = 0; i < this.personal.size(); i++) 
-			if(this.personal.get(i) instanceof Docente)
+		if(!this.personal.isEmpty())
+			for (int i = 0; i < this.personal.size(); i++) 
 				salario += this.personal.get(i).getSalario();
 		return salario;
 	}
-	
-	public double salarioTotalNoDocente() {
+
+	public double salarioTotalPersonalDocente() {
 		System.out.println("\nSALRIO TOTAL PERSONAL DOCENTE:");
 		double salario = 0;
-		for (int i = 0; i < this.personal.size(); i++) 
-			if(this.personal.get(i) instanceof NoDocente)
-				salario += this.personal.get(i).getSalario();
+		if(!this.personal.isEmpty())
+			for (int i = 0; i < this.personal.size(); i++) 
+				if(this.personal.get(i) instanceof Docente)
+					salario += this.personal.get(i).getSalario();
 		return salario;
 	}
-	
+
+	public double salarioTotalPersonalNoDocente() {
+		System.out.println("\nSALRIO TOTAL PERSONAL DOCENTE:");
+		double salario = 0;
+		if(!this.personal.isEmpty())
+			for (int i = 0; i < this.personal.size(); i++) 
+				if(this.personal.get(i) instanceof NoDocente)
+					salario += this.personal.get(i).getSalario();
+		return salario;
+	}
+
 	public void listarAlumnos() {
 		System.out.println("\nLISTADO DE ALUMNOS:");
-		for (int i = 0; i < this.alumnos.size(); i++) {
-			System.out.println("\t- " + this.alumnos.get(i).getNombre() + " " + this.alumnos.get(i).getApellido());
-		}
+		if(!alumnosU.isEmpty())
+			for (int i = 0; i < alumnosU.size(); i++) 
+				System.out.println("\t- " + alumnosU.get(i).getNombre() + " " + alumnosU.get(i).getApellido() + " : " + alumnosU.get(i).getRol());
+		else
+			System.out.println("ERROR: No hay alumnos asociados a esta universidad.");
 	}
 	
-	
-	
-	
+	public boolean darDeBajaAlumno(Alumno alumno) {
+		boolean baja = false;
+		if(alumno != null)
+			for (int i = 0; i < alumnosU.size(); i++) {
+				if(alumno.equals(alumnosU.get(i))) {
+					alumnosU.removeElement(alumnosU.get(i));
+					baja = true;
+				}
+			}
+		return baja;
+	}
+
+	public double calcularIngresoTotalAlumnos() {
+		double ingreso = 0;
+		if(!alumnosU.isEmpty())
+			for (int i = 0; i < alumnosU.size(); i++) 
+				ingreso += alumnosU.get(i).getFactura();
+		return ingreso;
+	}
+
+
+
+
 	//--------------GETTERS Y SETTERS--------------
 
 	public String getNombreUniversidad() {
@@ -142,13 +175,13 @@ public class Universidad {
 	}
 
 
-	public Vector<Alumno> getAlumnos() {
-		return alumnos;
+	public static Vector<Alumno> getAlumnos() {
+		return alumnosU;
 	}
 
 
-	public void setAlumnos(Vector<Alumno> alumnos) {
-		this.alumnos = alumnos;
+	public static void setAlumnos(Vector<Alumno> alumnos) {
+		alumnosU = alumnos;
 	}
 
 

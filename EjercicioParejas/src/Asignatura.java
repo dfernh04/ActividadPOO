@@ -1,7 +1,18 @@
 public class Asignatura {
-	String nombre;
-	double creditos;
-	float nota;
+	private	String nombre;
+	private double creditos;
+	private double nota;
+	
+	//CONSTRUCTOR
+	public Asignatura(String nombre, double creditos) {
+		this.nombre = nombre;
+		this.creditos = creditos;
+	}
+	
+	
+	//METODOS
+	
+	
 	//GETTERS Y SETTERS
 	public String getNombre() {
 		return nombre;
@@ -15,17 +26,10 @@ public class Asignatura {
 	public void setCreditos(double creditos) {
 		this.creditos = creditos;
 	}
-	public float getNota() {
+	public double getNota() {
 		return nota;
 	}
 	public void setNota(float nota) {
 		this.nota = nota;
 	}
-	//CNSTRUCTOR
-	public Asignatura(String nombre, double creditos) {
-		super();
-		this.nombre = nombre;
-		this.creditos = creditos;
-	}
-	//METODOS
 }
