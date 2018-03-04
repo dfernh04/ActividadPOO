@@ -1,5 +1,10 @@
 import java.util.Vector;
-
+/*
+ *  @author Diego
+ *  @author Pepe  
+ *  
+ *  @version 1.0
+ */
 public class Edificio {
 
 	private String nombre;

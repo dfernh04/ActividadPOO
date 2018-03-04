@@ -1,3 +1,9 @@
+/*
+ *  @author Diego
+ *  @author Pepe  
+ *  
+ *  @version 1.0
+ */
 public class Asignatura {
 	private	String nombre;
 	private double creditos;

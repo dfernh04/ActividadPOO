@@ -1,4 +1,9 @@
-
+/*
+ *  @author Diego
+ *  @author Pepe  
+ *  
+ *  @version 1.0
+ */
 public class Personal {
 	private String nombre;
 	private String apellidos;

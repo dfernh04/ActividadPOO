@@ -1,4 +1,10 @@
-
+/*
+ *  @author Diego
+ *  @author Pepe
+ *  
+ *  @version 1.0
+ *  
+ */
 public class PersonalNoDocente extends Personal {
 
 	private String area;

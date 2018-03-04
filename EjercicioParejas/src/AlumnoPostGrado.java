@@ -1,5 +1,10 @@
 import java.util.Vector;
-
+/*
+ *  @author Diego
+ *  @author Pepe  
+ *  
+ *  @version 1.0
+ */
 public class AlumnoPostGrado  extends Alumno{
 	
 	private AlumnoPreGrado alumnoPreGrado;
@@ -10,6 +15,8 @@ public class AlumnoPostGrado  extends Alumno{
 	 * @param edad define la edad del alumno, que puede cambiar con respecto a cuando sacó el grado
 	 * @param asignaturas define el total de asignaturas de este postgrado
 	 * @param alumnoPreGrado define el alumno que ha terminado el grado
+	 * 
+	 * @author Diego
 	 */
 	public AlumnoPostGrado(double factura, int edad, Vector<Asignatura> asignaturas, AlumnoPreGrado alumnoPreGrado) {
 		super(alumnoPreGrado.getNombre(), alumnoPreGrado.getApellido(), alumnoPreGrado.getId(), factura, edad, "Post-Grado", asignaturas);

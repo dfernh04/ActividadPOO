@@ -1,5 +1,8 @@
 import java.util.Vector;
-
+/*
+ *  @author Diego 
+ *  @author Pepe
+ */
 public class Universidad {
 
 	private String nombreUniversidad;

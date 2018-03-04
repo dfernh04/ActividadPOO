@@ -1,4 +1,9 @@
-
+/*
+ *  @author Diego
+ *  @author Pepe  
+ *  
+ *  @version 1.0
+ */
 public class Clase {
 	private int piso;
 	private int numero;
